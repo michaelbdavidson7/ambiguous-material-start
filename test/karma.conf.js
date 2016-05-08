@@ -13,7 +13,7 @@ module.exports = function (config) {
       'app/src/users/Users.js',
       'app/src/users/UserService.js',
       'app/src/users/UserController.js',
-
+      'app/src/app.js',
       'test/unit/**/*.js'
     ],
 
