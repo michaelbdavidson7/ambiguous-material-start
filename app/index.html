@@ -27,7 +27,12 @@
       <div ng-controller="index">
           asdf
       </div>
-      <div ng-controller="UserController as ul" ng-cloak>
+
+      <!--<div ng-controller="MainCtrl">
+          asdf
+      </div>-->
+      <div ng-view></div>
+      <!--<div ng-controller="UserController as ul" ng-cloak>
           <md-toolbar layout="row">
               <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
                   <md-icon md-svg-icon="menu"></md-icon>
@@ -59,14 +64,15 @@
               </md-content>
 
           </div>
-      </div>
+      </div>-->
     <script src="../node_modules/angular/angular.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.js"></script>
     <script src="../node_modules/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
     <script src="../node_modules/angular-route/angular-route.js"></script>
 
-    <script src="src/app.js"></script>
+    <!--<script src="src/app.js"></script>-->
+    <script src="./src/users/index2.js"></script>
     <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
@@ -74,8 +80,27 @@
     <script type="text/javascript">
          
           angular
-              .module('boardGameCo', ['ngMaterial', 'users'])
-              .config(function($mdThemingProvider, $mdIconProvider){
+              .module('boardGameCo', ['ngMaterial', 'users', 'ngRoute'])
+              .config(function ($mdThemingProvider, $mdIconProvider, $routeProvider, $httpProvider) {
+
+                  $routeProvider.
+		when('/', {
+		    templateUrl: '../app/src/users/user.html',
+		    controller: 'UserController'
+		}).
+
+		when('/userman', {
+		    templateUrl: '../app/users/user.html',
+		    controller: 'UserController'
+		}).
+		when('#', {
+		    templateUrl: '../app/users/user.html',
+		    controller: 'UserController'
+		})
+		.otherwise({
+		    redirectTo: '/'
+		});
+
 
                   $mdIconProvider
                       .defaultIconSet("./assets/svg/avatars.svg", 128)

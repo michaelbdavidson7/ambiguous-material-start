@@ -5,6 +5,7 @@ var app = angular.module("users", [
 	"ngResource",
 	"ngMaterial", 'users']);
 
+
 app.config(['$routeProvider', '$httpProvider',
 	function ($routeProvider, $httpProvider) {
 	    console.log('got to route provider');
