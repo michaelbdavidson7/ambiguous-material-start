@@ -1,6 +1,6 @@
 describe('UserService', function () {
 
-  beforeEach(module('users'));
+  beforeEach(module('myApp'));
 
   it('should provide a valid user list', inject(function (userService, $timeout) {
     var list= [];
