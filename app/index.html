@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en"  ng-app="boardGameCo">
+<html lang="en"  ng-app="myApp">
   <head>
     <title>Angular Material - Starter App</title>
 
@@ -23,14 +23,10 @@
 
   </head>
 
-<body layout="column">
+<body>
 
-
-
+    <!--This is where the app is loaded-->
     <div ng-view></div>
-    <!--<div ng-controller="index2">
-        asdf
-    </div>-->
 
     <script src="../node_modules/angular/angular.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.js"></script>
@@ -39,53 +35,8 @@
     <script src="../node_modules/angular-route/angular-route.js"></script>
 
     <script src="./src/app.js"></script>
-    <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
-
-    <script src="./src/zz/index2.js"></script>
-    
-    <script type="text/javascript">
-
-        angular
-            .module('boardGameCo', ['ngMaterial', 'users', 'ngRoute'])
-            .config(function ($mdThemingProvider, $mdIconProvider, $routeProvider, $httpProvider) {
-
-                $routeProvider.
-      when('/', {
-          templateUrl: '../app/src/users/user.html',
-          controller: 'UserController'
-      }).
-
-      when('/userman', {
-          templateUrl: '../app/users/user.html',
-          controller: 'UserController'
-      }).
-      when('#', {
-          templateUrl: '../app/users/user.html',
-          controller: 'UserController'
-      })
-      .otherwise({
-          redirectTo: '/'
-      });
-
-
-                $mdIconProvider
-                    .defaultIconSet("./assets/svg/avatars.svg", 128)
-                    .icon("menu", "./assets/svg/menu.svg", 24)
-                    .icon("share", "./assets/svg/share.svg", 24)
-                    .icon("google_plus", "./assets/svg/google_plus.svg", 512)
-                    .icon("hangouts", "./assets/svg/hangouts.svg", 512)
-                    .icon("twitter", "./assets/svg/twitter.svg", 512)
-                    .icon("phone", "./assets/svg/phone.svg", 512);
-
-                $mdThemingProvider.theme('default')
-                    .primaryPalette('brown')
-                    .accentPalette('red');
-
-            });
-
-    </script>
 
 </body>
 
