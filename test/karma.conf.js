@@ -9,6 +9,7 @@ module.exports = function (config) {
       'node_modules/angular-aria/angular-aria.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-material/angular-material.js',
+      'node_modules/angular-route/angular-route.js"',
 
       'app/src/app.js',
       'app/src/users/UserService.js',
