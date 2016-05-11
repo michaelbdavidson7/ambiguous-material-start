@@ -22,6 +22,7 @@
         self.selectUser = selectUser;
         self.toggleList = toggleUsersList;
         self.makeContact = makeContact;
+        self.submitUserName = submitUserName;
 
         // Load all registered users
 
@@ -35,6 +36,13 @@
         // *********************************
         // Internal methods
         // *********************************
+
+
+        function submitUserName(userName) {
+            alert(userName);
+        }
+
+
 
         /**
          * Hide or Show the 'left' sideNav area

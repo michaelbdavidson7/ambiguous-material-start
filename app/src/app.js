@@ -21,7 +21,7 @@ function ($routeProvider, $httpProvider, $mdThemingProvider, $mdIconProvider) {
         })
         .when('/user/:userId', {
             templateUrl: '../app/src/users/user-detail.html',
-            controller: 'UserController'
+            controller: 'UserDetailController'
         })
         .otherwise({
     redirectTo: '/'
