@@ -3,7 +3,7 @@
 /**
  * Angular App Declaration 
  */
-var app = angular.module('myApp', ['ngMaterial', 'ngRoute']);
+var app = angular.module('myApp', ['ngMaterial', 'ngRoute', 'ngResource']);
 
 
 /**

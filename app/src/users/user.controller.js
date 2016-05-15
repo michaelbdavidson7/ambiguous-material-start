@@ -2,10 +2,7 @@
 
     angular
          .module('myApp')
-         .controller('UserController', [
-            'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
-            UserController
-         ]);
+         .controller('UserController', UserController);
 
     /**
      * Main Controller for the Angular Material Starter App
@@ -14,7 +11,8 @@
      * @param avatarsService
      * @constructor
      */
-    function UserController(userService, $mdSidenav, $mdBottomSheet, $timeout, $log) {
+    UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', 'boardGameCollectionSvc'];
+    function UserController(userService, $mdSidenav, $mdBottomSheet, $timeout, $log, boardGameCollectionSvc) {
         var self = this;
 
         self.selected = null;
@@ -40,6 +38,9 @@
 
         function submitUserName(userName) {
             alert(userName);
+            boardGameCollectionSvc.get({}, function (data) {
+                console.log(data);
+            })
         }
 
 
